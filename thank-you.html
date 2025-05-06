@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Madara Pharmaceuticals</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+            <span>Madara Pharmaceuticals</span>
+          </a>
+        </div>
+        
+        <nav class="desktop-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+          
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+        <span>Madara Pharmaceuticals</span>
+      </div>
+      
+      <button class="close-menu" id="closeMenu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="cart.html">Cart <span id="mobileCartCount">0</span></a></li>
+    </ul>
+  </div>
+  
+  <!-- Thank You Page Content -->
+  <section class="thank-you-page">
+    <div class="container">
+      <div class="thank-you-content">
+        <div class="thank-you-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        
+        <h1>Thank You for Your Order!</h1>
+        
+        <p>Your order has been received and is being processed. You will receive a confirmation call shortly.</p>
+        
+        <div class="order-details">
+          <h2>Order Details</h2>
+          <p>
+            Order Number: #MD<span id="orderNumber"></span><br>
+            Payment Method: Cash on Delivery<br>
+            Estimated Delivery: Within 24-48 hours
+          </p>
+        </div>
+        
+        <div class="thank-you-actions">
+          <a href="index.html" class="btn btn-outline">Return to Home</a>
+          <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+            <span>Madara Pharmaceuticals</span>
+          </div>
+          <p>Safe, Fast, Reliable Medicine Delivery across Ghana.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="products.html">Prescription Drugs</a></li>
+            <li><a href="products.html">Over-the-Counter</a></li>
+            <li><a href="products.html">Personal Care</a></li>
+            <li><a href="products.html">Supplements</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p>123 Pharmacy Street</p>
+            <p>Accra, Ghana</p>
+            <p>Email: info@madarapharma.com</p>
+            <p>Phone: +233 12 345 6789</p>
+          </address>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Madara Pharmaceuticals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

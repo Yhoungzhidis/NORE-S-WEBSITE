@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Madara Pharmaceuticals</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+            <span>Madara Pharmaceuticals</span>
+          </a>
+        </div>
+        
+        <nav class="desktop-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+          
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+        <span>Madara Pharmaceuticals</span>
+      </div>
+      
+      <button class="close-menu" id="closeMenu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="cart.html">Cart <span id="mobileCartCount">0</span></a></li>
+    </ul>
+  </div>
+  
+  <!-- Checkout Page Content -->
+  <section class="checkout-page">
+    <div class="container">
+      <h1>Checkout</h1>
+      
+      <!-- Empty Cart Message -->
+      <div id="emptyCheckout" class="empty-cart">
+        <p>Your cart is empty</p>
+        <a href="products.html" class="btn btn-primary">Shop Now</a>
+      </div>
+      
+      <!-- Checkout Content -->
+      <div id="checkoutContent" class="checkout-content">
+        <div class="checkout-grid">
+          <div class="delivery-info">
+            <div class="checkout-form-container">
+              <h2>Delivery Information</h2>
+              
+              <form id="checkoutForm" class="checkout-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="address">Delivery Address</label>
+                  <input type="text" id="address" name="address" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="notes">Order Notes (Optional)</label>
+                  <textarea id="notes" name="notes" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="order-summary">
+            <h2>Order Summary</h2>
+            
+            <div id="checkoutItems" class="checkout-items">
+              <!-- Checkout items will be dynamically inserted here by JavaScript -->
+            </div>
+            
+            <div class="summary-totals">
+              <div class="summary-item">
+                <span>Subtotal</span>
+                <span id="checkoutSubtotal">$0.00</span>
+              </div>
+              
+              <div class="summary-item">
+                <span>Delivery Fee</span>
+                <span>$5.00</span>
+              </div>
+              
+              <div class="summary-item total">
+                <span>Total</span>
+                <span id="checkoutTotal">$0.00</span>
+              </div>
+            </div>
+            
+            <div class="payment-method">
+              <h3>Payment Method</h3>
+              <div class="payment-options">
+                <div class="payment-option">
+                  <input type="radio" id="cashOnDelivery" name="paymentMethod" value="cash" checked>
+                  <label for="cashOnDelivery">Cash on Delivery</label>
+                </div>
+                <div class="payment-option">
+                  <input type="radio" id="creditCard" name="paymentMethod" value="card">
+                  <label for="creditCard">Credit/Debit Card</label>
+                </div>
+                <div class="payment-option">
+                  <input type="radio" id="mobileMoney" name="paymentMethod" value="mobile">
+                  <label for="mobileMoney">Mobile Money</label>
+                </div>
+              </div>
+              
+              <!-- Payment Details Sections -->
+              <div id="cashDetails" class="payment-details active">
+                <p>Pay with cash when your order is delivered.</p>
+              </div>
+              
+              <div id="cardDetails" class="payment-details">
+                <div class="form-group">
+                  <label for="cardNumber">Card Number</label>
+                  <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" placeholder="MM/YY">
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123">
+                  </div>
+                </div>
+              </div>
+              
+              <div id="mobileDetails" class="payment-details">
+                <div class="form-group">
+                  <label for="mobileProvider">Provider</label>
+                  <select id="mobileProvider">
+                    <option value="">Select Provider</option>
+                    <option value="mtn">MTN Mobile Money</option>
+                    <option value="vodafone">Vodafone Cash</option>
+                    <option value="airtel">AirtelTigo Money</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mobileNumber">Mobile Number</label>
+                  <input type="text" id="mobileNumber" placeholder="e.g., 024 123 4567">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+            <span>Madara Pharmaceuticals</span>
+          </div>
+          <p>Safe, Fast, Reliable Medicine Delivery across Ghana.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="products.html">Prescription Drugs</a></li>
+            <li><a href="products.html">Over-the-Counter</a></li>
+            <li><a href="products.html">Personal Care</a></li>
+            <li><a href="products.html">Supplements</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p>123 Pharmacy Street</p>
+            <p>Accra, Ghana</p>
+            <p>Email: info@madarapharma.com</p>
+            <p>Phone: +233 12 345 6789</p>
+          </address>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Madara Pharmaceuticals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

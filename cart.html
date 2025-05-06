@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - Madara Pharmaceuticals</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+            <span>Madara Pharmaceuticals</span>
+          </a>
+        </div>
+        
+        <nav class="desktop-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-actions">
+          <a href="cart.html" class="cart-icon active">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+          
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+        <span>Madara Pharmaceuticals</span>
+      </div>
+      
+      <button class="close-menu" id="closeMenu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="cart.html">Cart <span id="mobileCartCount">0</span></a></li>
+    </ul>
+  </div>
+  
+  <!-- Cart Page Content -->
+  <section class="cart-page">
+    <div class="container">
+      <h1>Your Cart</h1>
+      
+      <!-- Empty Cart Message -->
+      <div id="emptyCart" class="empty-cart">
+        <p>Your cart is empty</p>
+        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+      </div>
+      
+      <!-- Cart Content -->
+      <div id="cartContent" class="cart-content">
+        <div class="cart-grid">
+          <div class="cart-items">
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th class="text-center">Quantity</th>
+                  <th class="text-right">Price</th>
+                  <th class="text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody id="cartItemsList">
+                <!-- Cart items will be dynamically inserted here by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="cart-summary">
+            <h2>Order Summary</h2>
+            
+            <div class="summary-item">
+              <span>Subtotal</span>
+              <span id="subtotal">$0.00</span>
+            </div>
+            
+            <div class="summary-item">
+              <span>Delivery Fee</span>
+              <span>$5.00</span>
+            </div>
+            
+            <div class="summary-item total">
+              <span>Total</span>
+              <span id="total">$0.00</span>
+            </div>
+            
+            <div class="cart-actions">
+              <a href="checkout.html" class="btn btn-primary btn-block">Proceed to Checkout</a>
+              <a href="products.html" class="btn btn-outline btn-block">Continue Shopping</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="images/madara-logo.png" alt="Madara Pharmaceuticals Logo">
+            <span>Madara Pharmaceuticals</span>
+          </div>
+          <p>Safe, Fast, Reliable Medicine Delivery across Ghana.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="products.html">Prescription Drugs</a></li>
+            <li><a href="products.html">Over-the-Counter</a></li>
+            <li><a href="products.html">Personal Care</a></li>
+            <li><a href="products.html">Supplements</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <address>
+            <p>123 Pharmacy Street</p>
+            <p>Accra, Ghana</p>
+            <p>Email: info@madarapharma.com</p>
+            <p>Phone: +233 12 345 6789</p>
+          </address>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Madara Pharmaceuticals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
